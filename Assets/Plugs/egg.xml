@@ -1,0 +1,5891 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>egg</name>
+    </assembly>
+    <members>
+        <member name="T:egg.Basic">
+            <summary>
+            egg组件基础对象
+            提供销毁、转字符串等快速操作
+            </summary>
+        </member>
+        <member name="M:egg.Basic.OnDispose">
+            <summary>
+            继承函数，销毁函数
+            </summary>
+        </member>
+        <member name="M:egg.Basic.OnParseString">
+            <summary>
+            继承函数，获取字符串表现形式
+            </summary>
+        </member>
+        <member name="M:egg.Basic.ToString">
+            <summary>
+            获取字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Basic.Dispose">
+            <summary>
+            释放对象
+            </summary>
+        </member>
+        <member name="T:egg.BasicObject">
+            <summary>
+            基本实体
+            </summary>
+        </member>
+        <member name="P:egg.BasicObject.BoId">
+            <summary>
+            获取BasicObject唯一标识符
+            </summary>
+        </member>
+        <member name="P:egg.BasicObject.BoManager">
+            <summary>
+            获取BasicObject管理器
+            </summary>
+        </member>
+        <member name="P:egg.BasicObject.BoOwner">
+            <summary>
+            获取BasicObject拥有者
+            </summary>
+        </member>
+        <member name="T:egg.BasicObjectHelper">
+            <summary>
+            BasicObject助手类
+            </summary>
+        </member>
+        <member name="M:egg.BasicObjectHelper.IsNull(egg.BasicObject)">
+            <summary>
+            判断对象是否为空
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectHelper.Destroy(egg.BasicObject)">
+            <summary>
+            能兼容为空情况的释放资源
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.BasicObjectsMnanger">
+            <summary>
+            基础对象管理器，用于快速访问对象及批量对象操作
+            </summary>
+        </member>
+        <member name="P:egg.BasicObjectsMnanger.Owner">
+            <summary>
+            获取所有者
+            </summary>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.#ctor(System.Object)">
+            <summary>
+            实例化对象
+            </summary>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.Create``1">
+            <summary>
+            在管理器中创建一个对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.Create(System.Type)">
+            <summary>
+            在管理器中创建一个对象
+            </summary>
+            <param name="tp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.Add(egg.BasicObject)">
+            <summary>
+            添加一个对像，并返回对象的标识
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.GetObjects``1">
+            <summary>
+            获取同一种类型的对象列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.GetObjectById(System.Int64)">
+            <summary>
+            获取成员对象
+            </summary>
+            <param name="boid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.RemoveAt(System.Int64)">
+            <summary>
+            删除一个对象
+            </summary>
+            <param name="boid"></param>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.DestroyAt(System.Int64)">
+            <summary>
+            摧毁一个对象
+            </summary>
+            <param name="boid"></param>
+        </member>
+        <member name="P:egg.BasicObjectsMnanger.Count">
+            <summary>
+            获取成员数量
+            </summary>
+        </member>
+        <member name="P:egg.BasicObjectsMnanger.Item(System.Int64)">
+            <summary>
+            获取成员对象
+            </summary>
+            <param name="boid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.Clear">
+            <summary>
+            清除所有成员对象
+            </summary>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.Dispose">
+            <summary>
+            释放对象
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.GetEnumerator">
+            <summary>
+            支持foreach
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.BasicObjectsMnanger.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            支持foreach
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Console.Arguments">
+            <summary>
+            参数集合
+            </summary>
+        </member>
+        <member name="M:egg.Console.Arguments.#ctor(System.String[],System.String[])">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="args"></param>
+            <param name="tags"></param>
+        </member>
+        <member name="T:egg.Console.EParams">
+            <summary>
+            E格式参数集合
+            </summary>
+        </member>
+        <member name="M:egg.Console.EParams.#ctor(System.String[])">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:egg.Console.EParams.OnParseString">
+            <summary>
+            获取字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.EggDynamicMetaObject">
+            <summary>
+            动态对象
+            </summary>
+        </member>
+        <member name="M:egg.EggDynamicMetaObject.#ctor(System.Linq.Expressions.Expression,System.Object)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="expression"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:egg.EggDynamicMetaObject.BindSetMember(System.Dynamic.SetMemberBinder,System.Dynamic.DynamicMetaObject)">
+            <summary>
+            设置值
+            </summary>
+            <param name="binder"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.EggDynamicMetaObject.BindGetMember(System.Dynamic.GetMemberBinder)">
+            <summary>
+            获取值
+            </summary>
+            <param name="binder"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Dynamic">
+            <summary>
+            动态类型
+            </summary>
+        </member>
+        <member name="M:egg.Dynamic.SetProperty(System.String,System.Object)">
+            <summary>
+            设置属性
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Dynamic.GetProperty(System.String)">
+            <summary>
+            获取属性
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.File.BinaryFile">
+            <summary>
+            二进制操作文件
+            </summary>
+        </member>
+        <member name="P:egg.File.BinaryFile.FilePath">
+            <summary>
+            文件地址
+            </summary>
+        </member>
+        <member name="P:egg.File.BinaryFile.Stream">
+            <summary>
+            文件操作流
+            </summary>
+        </member>
+        <member name="P:egg.File.BinaryFile.Position">
+            <summary>
+            获取或设置当前操作位置
+            </summary>
+        </member>
+        <member name="P:egg.File.BinaryFile.IsEnd">
+            <summary>
+            获取是否在文档末尾
+            </summary>
+        </member>
+        <member name="P:egg.File.BinaryFile.Length">
+            <summary>
+            获取文件当前长度
+            </summary>
+        </member>
+        <member name="M:egg.File.BinaryFile.#ctor(System.String,System.IO.FileMode)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="path"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:egg.File.BinaryFile.Read(System.Int64,System.Int32)">
+            <summary>
+            读取内容
+            </summary>
+            <param name="pos"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.BinaryFile.Read(System.Int32)">
+            <summary>
+            读取内容
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.BinaryFile.ReadByte">
+            <summary>
+            读取内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.BinaryFile.WriteByte(System.Byte)">
+            <summary>
+            写入内容
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.BinaryFile.Write(System.Int64,System.Byte[])">
+            <summary>
+            写入内容
+            </summary>
+            <param name="pos"></param>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.BinaryFile.Write(System.Byte[])">
+            <summary>
+            写入内容
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.File.BinaryFile.Append(System.Byte[])">
+            <summary>
+            在文件末尾添加内容
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.File.BinaryFile.ReadAllBytes(System.String,System.Boolean)">
+            <summary>
+            读取文件内容
+            </summary>
+            <param name="Path"></param>
+            <param name="create"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.BinaryFile.WriteAllBytes(System.String,System.Byte[])">
+            <summary>
+            将内容写入文件
+            </summary>
+            <param name="Path"></param>
+            <param name="cnt"></param>
+        </member>
+        <member name="M:egg.File.BinaryFile.Close">
+            <summary>
+            关闭文件
+            </summary>
+        </member>
+        <member name="M:egg.File.BinaryFile.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:egg.File.BinaryFile.GetMD5(System.String)">
+            <summary>
+            获取文件的MD5值
+            </summary>
+        </member>
+        <member name="T:egg.File.SerializableFile`1">
+            <summary>
+            序列化文档
+            </summary>
+        </member>
+        <member name="P:egg.File.SerializableFile`1.Document">
+            <summary>
+            获取关联文档
+            </summary>
+        </member>
+        <member name="M:egg.File.SerializableFile`1.#ctor(System.String)">
+            <summary>
+            Loads a configuration file.
+            </summary>
+            <param name="file">The filename where the configuration file can be found.</param>
+        </member>
+        <member name="M:egg.File.SerializableFile`1.Save(System.String)">
+            <summary>
+            Saves the configuration to a file
+            </summary>
+            <param name="filename">The filename for the saved configuration file.</param>
+        </member>
+        <member name="M:egg.File.SerializableFile`1.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.File.TextFile">
+            <summary>
+            文本文件
+            </summary>
+        </member>
+        <member name="P:egg.File.TextFile.Encoding">
+            <summary>
+            获取文本文件的编码形式
+            </summary>
+        </member>
+        <member name="M:egg.File.TextFile.#ctor(System.String,System.Text.Encoding,System.IO.FileMode)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="path"></param>
+            <param name="encoding"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:egg.File.TextFile.ReadToEnd(System.Int64)">
+            <summary>
+            读取内容
+            </summary>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.TextFile.ReadToEnd">
+            <summary>
+            读取所有内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.TextFile.ReadLine(System.Int64)">
+            <summary>
+            读取一行字符
+            </summary>
+            <param name="pos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.TextFile.ReadLine">
+            <summary>
+            读取一行字符
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.TextFile.Read(System.Int64,System.Int32)">
+            <summary>
+            读取内容
+            </summary>
+            <param name="pos"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.TextFile.Read(System.Int32)">
+            <summary>
+            读取内容
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.TextFile.Write(System.Int64,System.String)">
+            <summary>
+            写入内容
+            </summary>
+            <param name="pos"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:egg.File.TextFile.Write(System.String)">
+            <summary>
+            写入内容
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:egg.File.TextFile.WriteLine(System.String)">
+            <summary>
+            写一行内容
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:egg.File.TextFile.WriteLine(System.Int64,System.String)">
+            <summary>
+            写一行内容
+            </summary>
+            <param name="pos"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:egg.File.TextFile.Append(System.String)">
+            <summary>
+            添加内容
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:egg.File.TextFile.AppendLine(System.String)">
+            <summary>
+            添加内容
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="T:egg.File.UTF8File">
+            <summary>
+            以UTF8编码操作文件
+            </summary>
+        </member>
+        <member name="F:egg.File.UTF8File.WriteWithBoom">
+            <summary>
+            获取或设置是否带BOOM输出
+            </summary>
+        </member>
+        <member name="M:egg.File.UTF8File.#ctor(System.String,System.IO.FileMode)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="path"></param>
+            <param name="mode"></param>
+        </member>
+        <member name="M:egg.File.UTF8File.ReadAllText(System.String,System.Boolean)">
+            <summary>
+            读取文件内容
+            </summary>
+            <param name="path"></param>
+            <param name="create"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.UTF8File.ReadAllText(System.String)">
+            <summary>
+            读取文件内容
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.File.UTF8File.WriteAllText(System.String,System.String)">
+            <summary>
+            将内容写入文件
+            </summary>
+            <param name="path"></param>
+            <param name="cnt"></param>
+        </member>
+        <member name="M:egg.File.UTF8File.AppendText(System.String,System.String)">
+            <summary>
+            将内容追加写入文件
+            </summary>
+            <param name="path"></param>
+            <param name="cnt"></param>
+        </member>
+        <member name="M:egg.File.UTF8File.AppendTextLine(System.String,System.String)">
+            <summary>
+            将内容追加写入文件并换行
+            </summary>
+            <param name="Path"></param>
+            <param name="cnt"></param>
+        </member>
+        <member name="T:egg.HandleList`1">
+            <summary>
+            带句柄的值存储字典
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.HandleList`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.HandleList`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.HandleList`1.Item(System.Int64)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.HandleList`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.HandleList`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.HandleList`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.HandleList`1.Clear">
+            <summary>
+            清空集合
+            </summary>
+        </member>
+        <member name="M:egg.HandleList`1.ContainsKey(System.Int64)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.HandleList`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.HandleList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.HandleList`1.Remove(System.Int64)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="handle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.HandleList`1.TryGetValue(System.Int64,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="handle"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.HandleList`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.HandleList`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.InsensitiveKeyList`1">
+            <summary>
+            大小写不敏感的键值存储
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.InsensitiveKeyList`1.Item(System.String)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.InsensitiveKeyList`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.InsensitiveKeyList`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.InsensitiveKeyList`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.ContainsKey(System.String)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.Remove(System.String)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.TryGetValue(System.String,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.InsensitiveKeyList`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.InsensitiveKeyList`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.InsensitiveKeyValues`1">
+            <summary>
+            大小写不敏感的键值存储
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.InsensitiveKeyValues`1.Item(System.String)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.InsensitiveKeyValues`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.InsensitiveKeyValues`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.InsensitiveKeyValues`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.ContainsKey(System.String)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.Remove(System.String)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.TryGetValue(System.String,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.InsensitiveKeyValues`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.InsensitiveKeyValues`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.KeyList`1">
+            <summary>
+            键/值存储字典
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.KeyList`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.KeyList`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeyList`1.Item(System.String)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeyList`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.KeyList`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.KeyList`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.KeyList`1.Clear">
+            <summary>
+            清空集合
+            </summary>
+        </member>
+        <member name="M:egg.KeyList`1.ContainsKey(System.String)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyList`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyList`1.Remove(System.String)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyList`1.TryGetValue(System.String,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeyList`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.KeyList`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.KeySortList`1">
+            <summary>
+            自排序键/值存储字典
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.KeySortList`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.KeySortList`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeySortList`1.Item(System.String)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeySortList`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.KeySortList`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.KeySortList`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.KeySortList`1.Clear">
+            <summary>
+            清空集合
+            </summary>
+        </member>
+        <member name="M:egg.KeySortList`1.ContainsKey(System.String)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortList`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortList`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortList`1.Remove(System.String)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortList`1.TryGetValue(System.String,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeySortList`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.KeySortList`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.KeySortValues`1">
+            <summary>
+            自排序键/值存储字典
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.KeySortValues`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.KeySortValues`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeySortValues`1.Item(System.String)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeySortValues`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.KeySortValues`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.KeySortValues`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.KeySortValues`1.Clear">
+            <summary>
+            清空集合
+            </summary>
+        </member>
+        <member name="M:egg.KeySortValues`1.ContainsKey(System.String)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortValues`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortValues`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortValues`1.Remove(System.String)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeySortValues`1.TryGetValue(System.String,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeySortValues`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.KeySortValues`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.KeyStrings">
+            <summary>
+            键/值字符串集合
+            </summary>
+        </member>
+        <member name="M:egg.KeyStrings.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.KeyStrings.Set(System.String,System.String)">
+            <summary>
+            设置内容
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyStrings.Create">
+            <summary>
+            实例化一个键/值字符串集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.KeyValues`1">
+            <summary>
+            键/值存储字典
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:egg.KeyValues`1.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.KeyValues`1.OnReturnDefaultValue">
+            <summary>
+            返回默认值事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeyValues`1.Item(System.String)">
+            <summary>
+            获取或设置键值内容
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeyValues`1.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.KeyValues`1.Values">
+            <summary>
+            获取值集合
+            </summary>
+        </member>
+        <member name="P:egg.KeyValues`1.Count">
+            <summary>
+            获取集合内元素数量
+            </summary>
+        </member>
+        <member name="M:egg.KeyValues`1.Clear">
+            <summary>
+            清空集合
+            </summary>
+        </member>
+        <member name="M:egg.KeyValues`1.ContainsKey(System.String)">
+            <summary>
+            获取列表中是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyValues`1.GetEnumerator">
+            <summary>
+            获取枚举管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyValues`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            获取枚举接口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyValues`1.Remove(System.String)">
+            <summary>
+            移除一个元素
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.KeyValues`1.TryGetValue(System.String,`0@)">
+            <summary>
+            尝试获取值
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.KeyValues`1.IsEmpty">
+            <summary>
+            获取对象内元素是否为空
+            </summary>
+        </member>
+        <member name="M:egg.KeyValues`1.OnDispose">
+            <summary>
+            释放内存
+            </summary>
+        </member>
+        <member name="T:egg.Net.HttpClient">
+            <summary>
+            HTTP协议网络客户端
+            </summary>
+        </member>
+        <member name="T:egg.Net.HttpClient.Methods">
+            <summary>
+            支持的方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.GET">
+            <summary>
+            GET方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.POST">
+            <summary>
+            POST方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.HEAD">
+            <summary>
+            HEAD方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.OPTIONS">
+            <summary>
+            OPTIONS方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.PUT">
+            <summary>
+            PUT方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.PATCH">
+            <summary>
+            PATCH方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.DELETE">
+            <summary>
+            DELETE方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.TRACE">
+            <summary>
+            TRACE方法
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpClient.Methods.CONNECT">
+            <summary>
+            CONNECT方法
+            </summary>
+        </member>
+        <member name="T:egg.Net.HttpClient.DownloadingDelegate">
+            <summary>
+            下载进度函数
+            </summary>
+            <param name="size"></param>
+            <param name="loaded"></param>
+        </member>
+        <member name="P:egg.Net.HttpClient.Method">
+            <summary>
+            获取或设置请求方式
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpClient.Data">
+            <summary>
+            获取或设置请求数据
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpClient.Uri">
+            <summary>
+            获取相关地址信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpClient.Headers">
+            <summary>
+            获取头部信息定义
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpClient.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:egg.Net.HttpClient.#ctor(System.String,egg.Net.HttpModules.HttpHeaders)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="url"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:egg.Net.HttpClient.SetHeader(System.String,System.String)">
+            <summary>
+            设置头部定义
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.HttpClient.GetContent">
+            <summary>
+            获取内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.HttpClient.UploadFile(System.String)">
+            <summary>
+            上传文件并获取数据
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.HttpClient.Download(System.String,egg.Net.HttpClient.DownloadingDelegate)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="path"></param>
+            <param name="downloading"></param>
+        </member>
+        <member name="T:egg.Net.HttpModules.HttpCookies">
+            <summary>
+            专用于超文本传输协议的会话本地存储信息
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpCookies.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpCookies.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpCookies.ToString">
+            <summary>
+            获取标准的Cookie字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Net.HttpModules.HttpHeaders">
+            <summary>
+            Http协议头部
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpModules.HttpHeaders.x_www_form_urlencoded">
+            <summary>
+            application/x-www-form-urlencoded
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpModules.HttpHeaders.content_type">
+            <summary>
+            content_type
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpHeaders.ContentType">
+            <summary>
+            ContentType
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpHeaders.Create">
+            <summary>
+            创建一个实例化对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpHeaders.OnParseString">
+            <summary>
+            获取标准的字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Net.HttpModules.HttpRequest">
+            <summary>
+            Http提交管理器
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpRequest.Uri">
+            <summary>
+            获取地址信息对象
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpRequest.Header">
+            <summary>
+            头部信息
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpRequest.PrintToString">
+            <summary>
+            打印信息到字符串
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpRequest.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="T:egg.Net.HttpModules.HttpResponse">
+            <summary>
+            Http接收管理器
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpResponse.Protocol">
+            <summary>
+            获取协议版本
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpResponse.Status">
+            <summary>
+            获取状态码
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpResponse.Headers">
+            <summary>
+            头部信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpResponse.ContentBytes">
+            <summary>
+            头部信息
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpResponse.GetContent(System.Text.Encoding)">
+            <summary>
+            获取内容
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpResponse.GetUtf8Content">
+            <summary>
+            获取UTF8内容
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.HttpResponse.ContentLength">
+            <summary>
+            内容长度
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.HttpResponse.#ctor(System.String,System.Int32,egg.Net.HttpModules.HttpHeaders,System.Byte[])">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="T:egg.Net.HttpModules.HttpStatus">
+            <summary>
+            Http状态码
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpModules.HttpStatus.Found">
+            <summary>
+            Found
+            </summary>
+        </member>
+        <member name="F:egg.Net.HttpModules.HttpStatus.NotFound">
+            <summary>
+            Not Found
+            </summary>
+        </member>
+        <member name="T:egg.Net.HttpModules.SocketHttp">
+            <summary>
+            使用Socket重构的Http协议控制器
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.SocketHttp.Request">
+            <summary>
+            获取提交管理器
+            </summary>
+        </member>
+        <member name="P:egg.Net.HttpModules.SocketHttp.Response">
+            <summary>
+            获取接收管理器
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.SocketHttp.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:egg.Net.HttpModules.SocketHttp.Get">
+            <summary>
+            以Get方式获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Net.HttpModules.SocketHttps">
+            <summary>
+            使用Socket重构的Https协议控制器
+            </summary>
+        </member>
+        <member name="M:egg.Net.HttpModules.SocketHttps.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:egg.Net.HttpModules.SocketHttps.Get">
+            <summary>
+            以Get方式获取数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Net.TcpAcceptActionArgs">
+            <summary>
+            TCP错误信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpAcceptActionArgs.Socket">
+            <summary>
+            获取或设置信息
+            </summary>
+        </member>
+        <member name="T:egg.Net.TcpClient">
+            <summary>
+            TCP协议服务器客户端
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpClient.OnConnect(System.Action)">
+            <summary>
+            注册一个开始事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpClient.OnConnect">
+            <summary>
+            触发开始事件
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpClient.#ctor(System.String,System.Int32)">
+            <summary>
+            实例化一个新的TCP客户端
+            </summary>
+            <param name="host">主服务器地址</param>
+            <param name="port">主服务器服务端口</param>
+        </member>
+        <member name="M:egg.Net.TcpClient.Connect">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="T:egg.Net.TcpConnection">
+            <summary>
+            TCP连接
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnError(System.Action{egg.Net.TcpErrorActionArgs})">
+            <summary>
+            注册一个错误事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnError(System.String,System.Int32,System.String)">
+            <summary>
+            触发错误事件
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnFree(System.Action)">
+            <summary>
+            注册一个错误事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnFree">
+            <summary>
+            触发错误事件
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnDisconnect(System.Action)">
+            <summary>
+            注册一个开始事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnDisconnect">
+            <summary>
+            触发开始事件
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpConnection.Socket">
+            <summary>
+            获取基础网络通讯组件
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpConnection.FreeSecond">
+            <summary>
+            获取空闲秒数
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpConnection.Connected">
+            <summary>
+            获取是否连接
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpConnection.#ctor">
+            <summary>
+            实例化一个新的TCP连接
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpConnection.Close">
+            <summary>
+            关闭连接
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpConnection.Receive(System.Int32,System.Action{System.ArraySegment{System.Byte}})">
+            <summary>
+            接收数据
+            </summary>
+            <param name="len"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpConnection.Receive(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            接收数据
+            </summary>
+            <param name="buffer"></param>
+            <param name="offset"></param>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.TcpConnection.Send(System.Byte[])">
+            <summary>
+            直接向服务端发送数据
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Net.TcpConnection.Send(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            直接向服务端发送数据
+            </summary>
+            <param name="bytes"></param>
+            <param name="pos"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:egg.Net.TcpConnection.GetFreeTime">
+            <summary>
+            获取空闲时间(毫秒)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.TcpConnection.UpdateFreeTime">
+            <summary>
+            更新空闲
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.TcpConnection.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Net.TcpErrorActionArgs">
+            <summary>
+            TCP错误信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpErrorActionArgs.Code">
+            <summary>
+            获取或设置错误码
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpErrorActionArgs.Message">
+            <summary>
+            获取或设置信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpErrorActionArgs.Detail">
+            <summary>
+            获取或设置详情
+            </summary>
+        </member>
+        <member name="T:egg.Net.TcpServer">
+            <summary>
+            TCP协议服务器
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnStart(System.Action)">
+            <summary>
+            注册一个开始事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnStart">
+            <summary>
+            触发开始事件
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnError(System.Action{egg.Net.TcpErrorActionArgs})">
+            <summary>
+            注册一个错误事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnError(System.String,System.Int32,System.String)">
+            <summary>
+            触发错误事件
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnStop(System.Action)">
+            <summary>
+            注册一个停止事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnStop">
+            <summary>
+            触发停止事件
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnAccept(System.Action{egg.Net.TcpAcceptActionArgs})">
+            <summary>
+            注册一个新连接事件
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:egg.Net.TcpServer.OnAccept(System.Net.Sockets.Socket)">
+            <summary>
+            触发新连接事件
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpServer.Working">
+            <summary>
+            获取工作标识
+            </summary>        
+        </member>
+        <member name="P:egg.Net.TcpServer.Entities">
+            <summary>
+            获取通讯实体集合
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServer.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            实例化一个新的TCP服务端
+            </summary>
+            <param name="ip"></param>
+            <param name="port"></param>
+        </member>
+        <member name="M:egg.Net.TcpServer.GetNewIndex">
+            <summary>
+            获取一个新的索引
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.TcpServer.Start">
+            <summary>
+            启动服务
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServer.Stop">
+            <summary>
+            停止服务
+            </summary>
+        </member>
+        <member name="T:egg.Net.TcpServerEntities">
+            <summary>
+            TCP协议服务器通讯实体集合
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServerEntities.Clean">
+            <summary>
+            清理
+            </summary>
+        </member>
+        <member name="T:egg.Net.TcpServerEntity">
+            <summary>
+            TCP协议服务器通讯实体
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpServerEntity.Id">
+            <summary>
+            获取标识符
+            </summary>
+        </member>
+        <member name="P:egg.Net.TcpServerEntity.Server">
+            <summary>
+            获取关联服务端
+            </summary>
+        </member>
+        <member name="M:egg.Net.TcpServerEntity.#ctor(egg.Net.TcpServer,System.Net.Sockets.Socket)">
+            <summary>
+            实例化一个新的TCP服务端实体
+            </summary>
+            <param name="server"></param>
+            <param name="socket"></param>
+        </member>
+        <member name="T:egg.Net.Uri">
+            <summary>
+            统一资源定位符
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.Procotol">
+            <summary>
+            协议信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.Host">
+            <summary>
+            主机信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.Port">
+            <summary>
+            端口信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.Path">
+            <summary>
+            页面信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.FileName">
+            <summary>
+            页面信息
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.Query">
+            <summary>
+            获取参数查询器
+            </summary>
+        </member>
+        <member name="P:egg.Net.Uri.QueryString">
+            <summary>
+            获取参数字符串
+            </summary>
+        </member>
+        <member name="M:egg.Net.Uri.#ctor(System.String)">
+            <summary>
+            新建对象实例
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="P:egg.Net.Uri.Item(System.String)">
+            <summary>
+            获取或设置参数
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.Uri.OnParseString">
+            <summary>
+            获取字符串显示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Net.UriQuery">
+            <summary>
+            统一资源定位符参数查询器
+            </summary>
+        </member>
+        <member name="M:egg.Net.UriQuery.#ctor(System.String)">
+            <summary>
+            新建对象实例
+            </summary>
+            <param name="qs"></param>
+        </member>
+        <member name="P:egg.Net.UriQuery.Item(System.String)">
+            <summary>
+            获取或设置参数
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.UriQuery.OnParseString">
+            <summary>
+            获取字符串显示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Net.UriQuery.ToJson">
+            <summary>
+            获取Json形式表示的参数
+            </summary>
+        </member>
+        <member name="T:egg.None">
+            <summary>
+            空对象
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Config.Document">
+            <summary>
+            Linux系统常见配置类型
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Config.Document.Groups">
+            <summary>
+            获取全部的配置组
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="P:egg.Serializable.Config.Document.Item(System.String)">
+            <summary>
+            获取一个设置组
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.Remove(System.String)">
+            <summary>
+            移除配置组
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.Clear">
+            <summary>
+            清除所有配置项
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.OnDeserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化内容填充
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.Deserialize(System.String)">
+            <summary>
+            反序列化内容填充
+            </summary>
+            <param name="str"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.OnSerializeToBytes">
+            <summary>
+            内容序列化到字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.SerializeToString">
+            <summary>
+            内容序列化到字符串
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.OnParseString">
+            <summary>
+            获取字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.Document.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Config.Line">
+            <summary>
+            配置行
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.Line.OnParseString">
+            <summary>
+            获取标准字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.Line.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Config.Note">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Config.Note.Content">
+            <summary>
+            获取或设置注释内容
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.Note.OnParseString">
+            <summary>
+            获取标准字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.Note.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Config.Setting">
+            <summary>
+            配置项
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Config.Setting.Key">
+            <summary>
+            获取或设置键
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Config.Setting.Value">
+            <summary>
+            获取或设置值
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.Setting.OnParseString">
+            <summary>
+            获取标准字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.Setting.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Config.SettingGroup">
+            <summary>
+            设置组
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Config.SettingGroup.Name">
+            <summary>
+            获取或设置名称
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.AddEmptyLine">
+            <summary>
+            添加一条空行
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.AddNote(System.String)">
+            <summary>
+            添加一条注释
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="P:egg.Serializable.Config.SettingGroup.Keys">
+            <summary>
+            获取键集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Config.SettingGroup.Item(System.String)">
+            <summary>
+            获取或设置值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.ContainsKey(System.String)">
+            <summary>
+            判断是否存在键值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.Set(System.String,System.String)">
+            <summary>
+            设置配置
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.Delete(System.String)">
+            <summary>
+            删除配置
+            </summary>
+            <param key="key">The name of the setting to delete.</param>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.OnParseString">
+            <summary>
+            获取标准字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Config.SettingGroup.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Document">
+            <summary>
+            序列化文档
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Document.OnDeserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Document.OnSerializeToBytes">
+            <summary>
+            序列化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Document.Deserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Document.SerializeToBytes">
+            <summary>
+            序列化
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Html.DeclarationNode">
+            <summary>
+            申明节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.DeclarationNode.Content">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.DeclarationNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.DeclarationNode.OnGetOuterHtml">
+            <summary>
+            获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.DeclarationNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlCss">
+            <summary>
+            Css管理器
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlCss.Items">
+            <summary>
+            单元集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCss.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCss.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCss.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlCssItem">
+            <summary>
+            Css设置单元
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlCssItem.Name">
+            <summary>
+            获取或设置名称
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlCssItem.Content">
+            <summary>
+            获取或设置内容
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCssItem.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCssItem.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlCssMedia">
+            <summary>
+            响应式片段
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlCssMedia.Keys">
+            <summary>
+            键名称集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlCssMedia.Items">
+            <summary>
+            单元集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCssMedia.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="names"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlCssMedia.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlCssUnit">
+            <summary>
+            Css对象
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlCssUnitCollection">
+            <summary>
+            Css对象
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlDataElement">
+            <summary>
+            数据元素
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlDataElement.Data">
+            <summary>
+            获取或设置关联数据
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDataElement.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDataElement.OnGetInnerHtml">
+            <summary>
+            获取包含的Html代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDataElement.OnGetInnerText">
+            <summary>
+            获取包含的文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDataElement.OnSetInnerHtml(System.String)">
+            <summary>
+            设置包含的HTML代码
+            </summary>
+            <param name="xml"></param>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlDocument">
+            <summary>
+            文档对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlDocument.Head">
+            <summary>
+            获取Head元素
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlDocument.Body">
+            <summary>
+            获取Body元素
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlDocument.Nodes">
+            <summary>
+            获取子节点集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="html"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.CreateElement(System.String)">
+            <summary>
+            建立新元素
+            </summary>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.GetElementsByTagName(System.String,System.Boolean)">
+            <summary>
+            获取所有标签名节点
+            </summary>
+            <param name="tagName"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.GetElementsByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取所有满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.GetElementByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取第一个满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.GetElementById(System.String)">
+            <summary>
+            根据id查找元素
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.GetElementsByClassName(System.String)">
+            <summary>
+            根据id查找元素
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlDocument.InnerHTML">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.OnDeserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化内容填充
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.OnSerializeToBytes">
+            <summary>
+            内容序列化到字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlDocument.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlElement">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlElement.Children">
+            <summary>
+            获取子节点集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlElement.Parent">
+            <summary>
+            获取父节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlElement.Name">
+            <summary>
+            获取或设置名称属性
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlElement.Id">
+            <summary>
+            获取或设置id属性
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.OnGetOuterHtml">
+            <summary>
+            获取完整XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.OnGetInnerHtml">
+            <summary>
+            获取包含
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.OnSetInnerHtml(System.String)">
+            <summary>
+            设置包含XML
+            </summary>
+            <param name="html"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.OnGetInnerText">
+            <summary>
+            获取内置文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.GetElementsByTagName(System.String,System.Boolean)">
+            <summary>
+            获取所有标签名节点
+            </summary>
+            <param name="tagName"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.GetElementsByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取所有满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.GetElementByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取第一个满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.GetElementById(System.String)">
+            <summary>
+            根据id查找元素
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.GetElementsByClassName(System.String)">
+            <summary>
+            根据id查找元素
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElement.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlElementCollection">
+            <summary>
+            网页元素集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElementCollection.#ctor(egg.Serializable.Html.HtmlElement)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElementCollection.Add(egg.Serializable.Html.HtmlElement)">
+            <summary>
+            添加元素
+            </summary>
+            <param name="element"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElementCollection.Add(egg.Serializable.Html.HtmlElement,System.Boolean)">
+            <summary>
+            添加元素
+            </summary>
+            <param name="element"></param>
+            <param name="addNode"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElementCollection.Insert(System.Int32,egg.Serializable.Html.HtmlElement)">
+            <summary>
+            插入对象
+            </summary>
+            <param name="index"></param>
+            <param name="element"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlElementCollection.Insert(System.Int32,egg.Serializable.Html.HtmlElement,System.Boolean)">
+            <summary>
+            插入对象
+            </summary>
+            <param name="index"></param>
+            <param name="element"></param>
+            <param name="insertNode"></param>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlNode.Nodes">
+            <summary>
+            获取子节点集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlNode.Attr">
+            <summary>
+            获取属性集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.SetEncodeAttr(System.String,System.String)">
+            <summary>
+            设置属性
+            </summary>
+            <param name="key"></param>
+            <param name="val"></param>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlNode.IsSingle">
+            <summary>
+            获取或设置是否为独立标签
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlNode.TagName">
+            <summary>
+            获取名称
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.OnGetInnerText">
+            <summary>
+            获取内置文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.GetNodesByTagName(System.String,System.Boolean)">
+            <summary>
+            获取所有标签名节点
+            </summary>
+            <param name="tagName"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.GetNodesByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取所有满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.GetNodeByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取第一个满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.HtmlNodeCollection">
+            <summary>
+            节点集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.HtmlNodeCollection.Parent">
+            <summary>
+            获取父对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNodeCollection.#ctor(egg.Serializable.Html.HtmlNode)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNodeCollection.Add(egg.Serializable.Html.Node)">
+            <summary>
+            添加对象
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.HtmlNodeCollection.Insert(System.Int32,egg.Serializable.Html.Node)">
+            <summary>
+            插入对象
+            </summary>
+            <param name="index"></param>
+            <param name="node"></param>
+        </member>
+        <member name="T:egg.Serializable.Html.NodeType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Html.NodeType.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Html.NodeType.Element">
+            <summary>
+            元素节点
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Html.NodeType.Declaration">
+            <summary>
+            申明节点
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Html.NodeType.Note">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.Node">
+            <summary>
+            基础节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.Node.NodeType">
+            <summary>
+            获取节点类型
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.Node.Parent">
+            <summary>
+            获取父节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.Node.#ctor(egg.Serializable.Html.NodeType)">
+            <summary>
+            实例化
+            </summary>
+            <param name="nodeType"></param>
+        </member>
+        <member name="M:egg.Serializable.Html.Node.OnGetOuterHtml">
+            <summary>
+            获取包含自身的完整XML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Html.Node.OuterHTML">
+            <summary>
+            获取包含自身的完整XML字符串
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.Node.OnGetInnerHtml">
+            <summary>
+            获取包含的Html字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.Node.OnGetInnerText">
+            <summary>
+            获取包含的文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.Node.OnSetInnerHtml(System.String)">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Html.Node.InnerHTML">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.Node.InnerText">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.NoteNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.NoteNode.Note">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.NoteNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.NoteNode.OnGetOuterHtml">
+            <summary>
+            获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.NoteNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Html.TextNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Html.TextNode.Value">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.TextNode.SetEncodeValue(System.String)">
+            <summary>
+            设置带编码的值
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.TextNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Html.TextNode.OnGetOuterHtml">
+            <summary>
+            获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.TextNode.OnGetInnerText">
+            <summary>
+            获取内置文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Html.TextNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.ISerializable">
+            <summary>
+            可序列化单元
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.ISerializable.Deserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化字节内容
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.ISerializable.Deserialize(System.String)">
+            <summary>
+            反序列化字符串内容
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:egg.Serializable.ISerializable.SerializeToBytes">
+            <summary>
+            获取序列化结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.ISerializable.SerializeToString">
+            <summary>
+            获取序列化结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Json.Boolean">
+            <summary>
+            布尔节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.Boolean.Value">
+            <summary>
+            获取或设置内容
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Boolean.#ctor">
+            <summary>
+            实例化一个空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Boolean.OnParseBoolean">
+            <summary>
+            转化为布尔型内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Boolean.OnParseNumber">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Boolean.OnParseString">
+            <summary>
+            获取字符串内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Boolean.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Json.Document">
+            <summary>
+            Json文档对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.Document.RootNode">
+            <summary>
+            获取根节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Document.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Document.OnDeserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化内容填充
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Json.Document.OnSerializeToBytes">
+            <summary>
+            内容序列化到字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Document.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Json.List">
+            <summary>
+            列表节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.List.#ctor">
+            <summary>
+            实例化一个空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.List.OnGetItemCount">
+            <summary>
+            获取数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.List.OnGetIndexItem(System.Int32,System.Boolean)">
+            <summary>
+            获取一个子对象
+            </summary>
+            <param name="index"></param>
+            <param name="autoCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.List.OnSetIndexItem(System.Int32,egg.Serializable.Json.Node)">
+            <summary>
+            设置一个子对象
+            </summary>
+            <param name="index"></param>
+            <param name="node"></param>
+        </member>
+        <member name="M:egg.Serializable.Json.List.OnClear">
+            <summary>
+            清理对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.List.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.List.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Json.Node">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.Node.NodeType">
+            <summary>
+            获取节点类型
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.Node.Parent">
+            <summary>
+            获取父节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.#ctor(egg.Serializable.Json.NodeTypes)">
+            <summary>
+            实例化一个节点
+            </summary>
+            <param name="tp"></param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Deserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Deserialize(System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="str"></param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.SerializeToBytes">
+            <summary>
+            序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.SerializeToString">
+            <summary>
+            序列化内容
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnDeserialize(System.String)">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnParseString">
+            <summary>
+            获取字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnClear">
+            <summary>
+            判断是否为空节点
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Clear">
+            <summary>
+            判断是否为空节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnGetKeyItem(System.String,System.Boolean)">
+            <summary>
+            获取子对象
+            </summary>
+            <param name="key"></param>
+            <param name="autoCreate"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnSetKeyItem(System.String,egg.Serializable.Json.Node)">
+            <summary>
+            设置子对象
+            </summary>
+            <param name="key"></param>
+            <param name="node"></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="P:egg.Serializable.Json.Node.Item(System.String)">
+            <summary>
+            获取或设置子对象
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnGetKeys">
+            <summary>
+            获取子对象键值集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Json.Node.Keys">
+            <summary>
+            获取子对象键值集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Null(System.String)">
+            <summary>
+            获取数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Number(System.String)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Number(System.String,System.Double)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Boolean(System.String,System.Boolean)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Boolean(System.String)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.String(System.String,System.String)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.String(System.String)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Object(System.String,egg.Serializable.Json.Object)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Object(System.String)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.List(System.String,egg.Serializable.Json.List)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.List(System.String)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Json(System.String,System.String)">
+            <summary>
+            设置Json内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnGetIndexItem(System.Int32,System.Boolean)">
+            <summary>
+            获取索引对象
+            </summary>
+            <param name="index"></param>
+            <param name="autoCreate"></param>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnSetIndexItem(System.Int32,egg.Serializable.Json.Node)">
+            <summary>
+            设置索引对象
+            </summary>
+            <param name="index"></param>
+            <param name="node"></param>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="P:egg.Serializable.Json.Node.Item(System.Int32)">
+            <summary>
+            获取或设置数组对象
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnGetItemCount">
+            <summary>
+            获取索引对象数量集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Json.Node.Count">
+            <summary>
+            获取索引对象数量集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Null(System.Int32)">
+            <summary>
+            获取数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Number(System.Int32)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Number(System.Int32,System.Double)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Boolean(System.Int32,System.Boolean)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Boolean(System.Int32)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.String(System.Int32,System.String)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.String(System.Int32)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Object(System.Int32,egg.Serializable.Json.Object)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Object(System.Int32)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.List(System.Int32,egg.Serializable.Json.List)">
+            <summary>
+            设置数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.List(System.Int32)">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.Json(System.Int32,System.String)">
+            <summary>
+            设置Json内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnCheckNull">
+            <summary>
+            判断是否为空节点
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.IsNullNode">
+            <summary>
+            判断是否为空节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnParseNumber">
+            <summary>
+            转化为数值
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.ToNumber">
+            <summary>
+            转化为数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.OnParseBoolean">
+            <summary>
+            转化为数值
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.ToBoolean">
+            <summary>
+            转化为数值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.Boolean">
+            <summary>
+            赋值为布尔型
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.Boolean)~egg.Serializable.Json.Node">
+            <summary>
+            从布尔型建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.Byte">
+            <summary>
+            赋值为字节型数值
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.Byte)~egg.Serializable.Json.Node">
+            <summary>
+            从字节型数据建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.Int32">
+            <summary>
+            赋值为整型数值
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.Int32)~egg.Serializable.Json.Node">
+            <summary>
+            从整型数据建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.Int64">
+            <summary>
+            赋值为长整型数值
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.Int64)~egg.Serializable.Json.Node">
+            <summary>
+            从长整型数据建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.Single">
+            <summary>
+            赋值为浮点型数值
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.Single)~egg.Serializable.Json.Node">
+            <summary>
+            从浮点型数据建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.Double">
+            <summary>
+            赋值为双精度浮点型数值
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.Double)~egg.Serializable.Json.Node">
+            <summary>
+            从双精度浮点型数据建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(egg.Serializable.Json.Node)~System.String">
+            <summary>
+            赋值为字符串
+            </summary>
+            <param name="node">节点</param>
+        </member>
+        <member name="M:egg.Serializable.Json.Node.op_Implicit(System.String)~egg.Serializable.Json.Node">
+            <summary>
+            从字符串建立对象
+            </summary>
+            <param name="value">内容</param>
+        </member>
+        <member name="T:egg.Serializable.Json.NodeTypes">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Json.NodeTypes.Null">
+            <summary>
+            Null
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Json.NodeTypes.Number">
+            <summary>
+            数值
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Json.NodeTypes.Boolean">
+            <summary>
+            布尔
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Json.NodeTypes.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Json.NodeTypes.Object">
+            <summary>
+            对象
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Json.NodeTypes.List">
+            <summary>
+            列表
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Json.Null">
+            <summary>
+            空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Null.#ctor">
+            <summary>
+            实例化一个空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Null.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Null.OnCheckNull">
+            <summary>
+            为空节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Json.Null.Entity">
+            <summary>
+            获取一个空实体
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Json.Number">
+            <summary>
+            数字节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.Number.Value">
+            <summary>
+            获取或设置内容
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Number.#ctor">
+            <summary>
+            实例化一个空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Number.OnParseBoolean">
+            <summary>
+            转化为布尔型内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Number.OnParseNumber">
+            <summary>
+            获取数值内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Number.OnParseString">
+            <summary>
+            获取字符串内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Number.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Json.Object">
+            <summary>
+            对象节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.#ctor">
+            <summary>
+            实例化一个空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.OnGetKeys">
+            <summary>
+            获取键集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.OnGetKeyItem(System.String,System.Boolean)">
+            <summary>
+            获取一个子对象
+            </summary>
+            <param name="key"></param>
+            <param name="autoCreate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.OnSetKeyItem(System.String,egg.Serializable.Json.Node)">
+            <summary>
+            设置一个子对象
+            </summary>
+            <param name="key"></param>
+            <param name="node"></param>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.OnClear">
+            <summary>
+            清理对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.Object.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Json.ObjectNode">
+            <summary>
+            对象节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.ObjectNode.Objects">
+            <summary>
+            获取Bo对象管理器
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.ObjectNode.#ctor(egg.Serializable.Json.NodeTypes)">
+            <summary>
+            实例化一个节点
+            </summary>
+            <param name="tp"></param>
+        </member>
+        <member name="M:egg.Serializable.Json.ObjectNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Json.String">
+            <summary>
+            字符串节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Json.String.Value">
+            <summary>
+            获取或设置内容
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.String.#ctor">
+            <summary>
+            实例化一个空节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.String.OnParseBoolean">
+            <summary>
+            转化为布尔型内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.String.OnParseNumber">
+            <summary>
+            获取字符串内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.String.OnParseString">
+            <summary>
+            获取字符串内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Json.String.OnSerialize">
+            <summary>
+            获取序列化内容
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Json.ValueNode">
+            <summary>
+            值节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Json.ValueNode.#ctor(egg.Serializable.Json.NodeTypes)">
+            <summary>
+            实例化一个节点
+            </summary>
+            <param name="tp"></param>
+        </member>
+        <member name="T:egg.Serializable.Markdown.Document">
+            <summary>
+            Markdown文档对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.Document.Root">
+            <summary>
+            获取根节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.Document.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.Document.OnDeserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化内容填充
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Markdown.Document.OnSerializeToBytes">
+            <summary>
+            内容序列化到字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.Document.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTypes">
+            <summary>
+            Markdown的元素类型
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.Null">
+            <summary>
+            空
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.Line">
+            <summary>
+            分隔线
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.Text">
+            <summary>
+            纯文本
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.TextLine">
+            <summary>
+            文本行
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.TextLink">
+            <summary>
+            超链接
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.List">
+            <summary>
+            列表
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.ListItem">
+            <summary>
+            列表项
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.Block">
+            <summary>
+            区块
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.Table">
+            <summary>
+            表
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.TableRow">
+            <summary>
+            表行
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.TableHeader">
+            <summary>
+            表头
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.TableCell">
+            <summary>
+            表单元格
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.TableAlign">
+            <summary>
+            表对齐
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.CodeLine">
+            <summary>
+            代码行
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.CodeBlock">
+            <summary>
+            代码块
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Markdown.MdTypes.DocumentRoot">
+            <summary>
+            文档根对象
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdBasic">
+            <summary>
+            Markdown的基础对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdBasic.ParentBlock">
+            <summary>
+            获取父区块
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdBasic.Type">
+            <summary>
+            获取元素类型
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasic.#ctor(egg.Serializable.Markdown.MdTypes)">
+            <summary>
+            对象实例化
+            <param name="mdType"></param>
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasic.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasic.OnGetHtmlString">
+            <summary>
+            获取HTML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasic.ToHtml">
+            <summary>
+            转化为HTML代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasic.OnGetMarkdownString">
+            <summary>
+            获取HTML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasic.ToMarkdown">
+            <summary>
+            转化为Markdown代码
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdBasicBlock">
+            <summary>
+            包含内容的Markdown元素的基础块对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdBasicBlock.Children">
+            <summary>
+            获取子元素集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdBasicBlock.LevelString">
+            <summary>
+            获取或设置层次表示字符串
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicBlock.#ctor(egg.Serializable.Markdown.MdTypes,System.String)">
+            <summary>
+            对象实例化
+            <param name="mdType"></param>
+            <param name="lvString"></param>
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicBlock.GetSpace">
+            <summary>
+            获取完整的分层字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicBlock.GetFullLevelString">
+            <summary>
+            获取完整的分层字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicBlock.OnGetMarkdownString">
+            <summary>
+            获取标准的Markdown字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicBlock.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicBlock.OnGetHtmlString">
+            <summary>
+            获取HTML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdBasicCollection">
+            <summary>
+            基础对象集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdBasicCollection.ParentBlock">
+            <summary>
+            父区块
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicCollection.#ctor(egg.Serializable.Markdown.MdBasicBlock)">
+            <summary>
+            实例化块对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicCollection.Add(egg.Serializable.Markdown.MdBasic)">
+            <summary>
+            添加元素
+            </summary>
+            <param name="md"></param>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicCollection.GetMarkdownString">
+            <summary>
+            获取标准的Markdown字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicCollection.GetString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicCollection.GetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdBasicContent">
+            <summary>
+            包含内容的Markdown元素的基础对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdBasicContent.Content">
+            <summary>
+            获取或设置内容
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicContent.#ctor(egg.Serializable.Markdown.MdTypes)">
+            <summary>
+            对象实例化
+            <param name="mdType"></param>
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBasicContent.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdBlock">
+            <summary>
+            区块
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBlock.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBlock.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdBlock.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdCodeBlock">
+            <summary>
+            代码块
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdCodeBlock.Language">
+            <summary>
+            获取或设置语言
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeBlock.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeBlock.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeBlock.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeBlock.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdCodeLine">
+            <summary>
+            代码行
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeLine.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeLine.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeLine.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdCodeLine.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdDocumentRoot">
+            <summary>
+            Markdown 文档对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdDocumentRoot.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdDocumentRoot.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdLine">
+            <summary>
+            文本对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdLine.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdLine.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdLine.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdLine.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdList">
+            <summary>
+            有序列表
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdList.IsOrdered">
+            <summary>
+            获取或设置是否为有序列表
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdList.SerialNumber">
+            <summary>
+            获取或设置序号
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdList.#ctor">
+            <summary>
+            对象初始化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdList.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdList.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdListItem">
+            <summary>
+            无序列表项
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdListItem.SerialNumber">
+            <summary>
+            获取或设置序号
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdListItem.#ctor">
+            <summary>
+            对象初始化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdListItem.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdListItem.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdListItem.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdNull">
+            <summary>
+            文本对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdNull.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdNull.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdNull.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdNull.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTable">
+            <summary>
+            表格
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdTable.Row">
+            <summary>
+            获取或设置序号
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTable.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTable.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTable.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTableAlign">
+            <summary>
+            表格头部数据
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableAlign.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableAlign.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableAlign.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableAlign.OnGetHtmlString">
+            <summary>
+            获取标准的HTML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTableCell">
+            <summary>
+            表格行
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableCell.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableCell.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableCell.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTableHeader">
+            <summary>
+            表格头部数据
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableHeader.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableHeader.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableHeader.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTableRow">
+            <summary>
+            表格行
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableRow.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableRow.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTableRow.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdText">
+            <summary>
+            文本对象
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdText.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdText.IsCode">
+            <summary>
+            获取或设置是否为代码
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdText.IsBold">
+            <summary>
+            获取或设置是否为粗体
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdText.IsItalic">
+            <summary>
+            获取或设置是否为斜体
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdText.IsStrikethrough">
+            <summary>
+            获取或设置是否带删除线
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdText.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdText.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTextLine">
+            <summary>
+            文本行
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdTextLine.IsSection">
+            <summary>
+            是否为段落
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLine.#ctor(egg.Serializable.Markdown.MdTypes)">
+            <summary>
+            实例化对象
+            <param name="mdType"></param>
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLine.OnParseString">
+            <summary>
+            获取标准字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLine.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLine.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTextLink">
+            <summary>
+            超链接
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLink.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdTextLink.Url">
+            <summary>
+            获取或设置链接地址
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLink.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTextLink.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Markdown.MdTitle">
+            <summary>
+            一级标题
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Markdown.MdTitle.Level">
+            <summary>
+            层级
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTitle.#ctor(System.Int32)">
+            <summary>
+            对象实例化
+            <param name="lv"></param>
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTitle.OnParseString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTitle.OnGetMarkdownString">
+            <summary>
+            获取标准字符串表示
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Markdown.MdTitle.OnGetHtmlString">
+            <summary>
+            获取HTML表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Serializable.Xml.CDataNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.CDataNode.Value">
+            <summary>
+            获取或设置值
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.CDataNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.CDataNode.OnGetOuterXml">
+            <summary>
+            获取完整XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.CDataNode.OnGetInnerXml">
+            <summary>
+            获取包含
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.CDataNode.OnGetInnerText">
+            <summary>
+            获取内置文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.CDataNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.DeclarationNode">
+            <summary>
+            申明节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.DeclarationNode.Attr">
+            <summary>
+            获取属性集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.DeclarationNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.DeclarationNode.OnGetOuterXml">
+            <summary>
+            获取完整XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.DeclarationNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.NodeType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Xml.NodeType.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Xml.NodeType.CData">
+            <summary>
+            CDATA
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Xml.NodeType.Normal">
+            <summary>
+            标准节点
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Xml.NodeType.Declaration">
+            <summary>
+            申明节点
+            </summary>
+        </member>
+        <member name="F:egg.Serializable.Xml.NodeType.Note">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.Node">
+            <summary>
+            基础节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.Node.NodeType">
+            <summary>
+            获取节点类型
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.Node.Parent">
+            <summary>
+            获取父节点
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.Node.#ctor(egg.Serializable.Xml.NodeType)">
+            <summary>
+            实例化
+            </summary>
+            <param name="nodeType"></param>
+        </member>
+        <member name="M:egg.Serializable.Xml.Node.OnGetOuterXml">
+            <summary>
+            获取包含自身的完整XML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Xml.Node.OuterXml">
+            <summary>
+            获取包含自身的完整XML字符串
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.Node.OnGetInnerXml">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.Node.OnGetInnerText">
+            <summary>
+            获取包含的文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.Node.OnSetInnerXml(System.String)">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Xml.Node.InnerXml">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.Node.InnerText">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.NoteNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.NoteNode.Note">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.NoteNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.NoteNode.OnGetOuterXml">
+            <summary>
+            获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.NoteNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.TextNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.TextNode.Value">
+            <summary>
+            获取或设置
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.TextNode.SetEncodeValue(System.String)">
+            <summary>
+            设置带编码的值
+            </summary>
+            <param name="val"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.TextNode.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.TextNode.OnGetOuterXml">
+            <summary>
+            获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.TextNode.OnGetInnerText">
+            <summary>
+            获取内置文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.TextNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.XmlDocument">
+            <summary>
+            文档对象
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlDocument.Nodes">
+            <summary>
+            获取子节点集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="xml"></param>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlDocument.Item(System.String)">
+            <summary>
+            获取一个子节点
+            </summary>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.GetNodesByTagName(System.String,System.Boolean)">
+            <summary>
+            获取所有标签名节点
+            </summary>
+            <param name="tagName"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.GetNodesByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取所有满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.GetNodeByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取第一个满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlDocument.InnerXml">
+            <summary>
+            获取包含的XML字符串
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.AddNode(System.String)">
+            <summary>
+            添加一个新的标准节点
+            </summary>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.AddNote">
+            <summary>
+            添加一个注释
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.OnDeserialize(System.Span{System.Byte})">
+            <summary>
+            反序列化内容填充
+            </summary>
+            <param name="bytes"></param>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.OnSerializeToBytes">
+            <summary>
+            内容序列化到字节数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlDocument.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.XmlNode">
+            <summary>
+            文本节点
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlNode.Nodes">
+            <summary>
+            获取子节点集合
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlNode.Attr">
+            <summary>
+            获取属性集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.SetEncodeAttr(System.String,System.String)">
+            <summary>
+            设置属性
+            </summary>
+            <param name="key"></param>
+            <param name="val"></param>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlNode.IsSingle">
+            <summary>
+            获取或设置是否为独立标签
+            </summary>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlNode.TagName">
+            <summary>
+            获取名称
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.OnGetOuterXml">
+            <summary>
+            获取完整XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.OnGetInnerXml">
+            <summary>
+            获取包含
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.OnSetInnerXml(System.String)">
+            <summary>
+            设置包含XML
+            </summary>
+            <param name="xml"></param>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.OnGetInnerText">
+            <summary>
+            获取内置文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Serializable.Xml.XmlNode.Item(System.String)">
+            <summary>
+            获取一个子节点
+            </summary>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.GetNodesByTagName(System.String,System.Boolean)">
+            <summary>
+            获取所有标签名节点
+            </summary>
+            <param name="tagName"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.GetNodesByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取所有满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.GetNodeByAttr(System.String,System.String,System.Boolean)">
+            <summary>
+            获取第一个满足属性限定的节点
+            </summary>
+            <param name="attrName"></param>
+            <param name="attrValue"></param>
+            <param name="searchChildNodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.AddNode(System.String)">
+            <summary>
+            添加一个新的标准节点
+            </summary>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.AddNote">
+            <summary>
+            添加一个注释
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNode.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Serializable.Xml.XmlNodeCollection">
+            <summary>
+            节点集合
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNodeCollection.#ctor(egg.Serializable.Xml.XmlNode)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="parent"></param>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNodeCollection.Add(egg.Serializable.Xml.Node)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNodeCollection.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="M:egg.Serializable.Xml.XmlNodeCollection.Insert(System.Int32,egg.Serializable.Xml.Node)">
+            <summary>
+            插入对象
+            </summary>
+            <param name="index"></param>
+            <param name="node"></param>
+        </member>
+        <member name="T:egg.StringHelper">
+            <summary>
+            专用字符串扩展
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.GetLength(System.String)">
+            <summary>
+            以安全的方式获取长度
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.StringHelper.IsNull(System.String)">
+            <summary>
+            是否为空字符串
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.IsEmpty(System.String)">
+            <summary>
+            是否内容为空
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.IsDouble(System.String)">
+            <summary>
+            是否为一个双精度数字
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.ToDouble(System.String)">
+            <summary>
+            获取双精度数据
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.IsFloat(System.String)">
+            <summary>
+            是否为一个单精度数字
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.ToFloat(System.String)">
+            <summary>
+            获取单精度数据
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.IsInteger(System.String)">
+            <summary>
+            是否为一个整型数字
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.ToInteger(System.String)">
+            <summary>
+            获取整型数据
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.IsLong(System.String)">
+            <summary>
+            是否为一个长整型数字
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.ToLong(System.String)">
+            <summary>
+            获取长整形数据
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.ToUtf8Bytes(System.String)">
+            <summary>
+            转为UTF-8数组
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.IsIPv4(System.String)">
+            <summary>
+            是否为一个标准的IPv4字符串
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.UnicodeCoding(System.String)">
+            <summary>
+            使用Unicode进行字符串编码
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.UnicodeDecoding(System.String)">
+            <summary>
+            使用Unicode进行字符串解码
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.GetMD5(System.String)">
+            <summary>
+            获取字符串的MD5值
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.GetSha1(System.String)">
+            <summary>
+            获取字符串的sha1值
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.GetSha256(System.String)">
+            <summary>
+            获取字符串的sha256值
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.GetSha512(System.String)">
+            <summary>
+            获取字符串的sha512值
+            </summary>
+        </member>
+        <member name="M:egg.StringHelper.SortBefore(System.String,System.String)">
+            <summary>
+            是否对于指定字符串排序靠前
+            </summary>
+            <param name="sz"></param>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.StringHelper.SortAfter(System.String,System.String)">
+            <summary>
+            是否对于指定字符串排序靠后
+            </summary>
+            <param name="sz"></param>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Strings">
+            <summary>
+            字符串集合
+            </summary>
+        </member>
+        <member name="M:egg.Strings.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Strings.Create(System.String[])">
+            <summary>
+            实例化一个键/值字符串集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Text.Pinyin">
+            <summary>
+            拼音处理
+            </summary>
+        </member>
+        <member name="M:egg.Text.Pinyin.#ctor">
+            <summary>
+            都西昂实例化
+            </summary>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetPinyin(System.Char)">
+            <summary>
+            根据字符获取拼音
+            </summary>
+            <param name="chr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetPinyin(System.String)">
+            <summary>
+            根据字符获取拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetPinyinWithTone(System.Char)">
+            <summary>
+            根据字符获取拼音
+            </summary>
+            <param name="chr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetPinyinWithTone(System.String)">
+            <summary>
+            根据字符获取拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetInitialLetters(System.String)">
+            <summary>
+            根据字符获取拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.OnDispose">
+            <summary>
+            释放对象
+            </summary>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetPinyinFromString(System.String)">
+            <summary>
+            获取拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetPinyinToneFromString(System.String)">
+            <summary>
+            获取带音节拼音
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Text.Pinyin.GetInitialLettersFromString(System.String)">
+            <summary>
+            获取首字母
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Text.PinyinInfo">
+            <summary>
+            拼音信息
+            </summary>
+        </member>
+        <member name="P:egg.Text.PinyinInfo.Pinyin">
+            <summary>
+            拼音
+            </summary>
+        </member>
+        <member name="P:egg.Text.PinyinInfo.Tone">
+            <summary>
+            声调
+            </summary>
+        </member>
+        <member name="P:egg.Text.PinyinInfo.PinyinWithTone">
+            <summary>
+            带声调拼音
+            </summary>
+        </member>
+        <member name="M:egg.Text.PinyinInfo.#ctor(System.String,System.Int32)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="py"></param>
+            <param name="tone"></param>
+        </member>
+        <member name="T:egg.Time">
+            <summary>
+            日期时间专用对象
+            </summary>
+        </member>
+        <member name="M:egg.Time.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="str"></param>
+        </member>
+        <member name="M:egg.Time.#ctor(System.DateTime)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:egg.Time.#ctor(System.Int64,System.Boolean)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="tsp"></param>
+            <param name="hasMilliseconds"></param>
+        </member>
+        <member name="M:egg.Time.New(System.String)">
+            <summary>
+            申请一个新的示例
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.New(System.DateTime)">
+            <summary>
+            申请一个新的示例
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.New(System.Int64,System.Boolean)">
+            <summary>
+            申请一个新的示例
+            </summary>
+            <param name="tsp"></param>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Time.Now">
+            <summary>
+            申请一个新的示例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.ToString(System.String)">
+            <summary>
+            获取指定格式的日期数据
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.OnParseString">
+            <summary>
+            转化为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Time.TimeZone">
+            <summary>
+            获取标准日期字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.ToTimeStamp">
+            <summary>
+            获取标准日期字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.ToMillisecondsTimeStamp">
+            <summary>
+            获取包含毫秒的时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.ToDateString">
+            <summary>
+            获取标准日期字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.ToTimeString">
+            <summary>
+            获取标准时间字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.ToStringWithMilliseconds">
+            <summary>
+            获取标准时间字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.Change(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取调整后的时间
+            </summary>
+            <param name="years"></param>
+            <param name="months"></param>
+            <param name="days"></param>
+            <param name="hours"></param>
+            <param name="minutes"></param>
+            <param name="seconds"></param>
+            <param name="milliseconds"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Time.Year">
+            <summary>
+            获取年份
+            </summary>
+        </member>
+        <member name="P:egg.Time.Month">
+            <summary>
+            获取月份
+            </summary>
+        </member>
+        <member name="P:egg.Time.Day">
+            <summary>
+            获取日期
+            </summary>
+        </member>
+        <member name="P:egg.Time.Hour">
+            <summary>
+            获取时
+            </summary>
+        </member>
+        <member name="P:egg.Time.Minute">
+            <summary>
+            获取分
+            </summary>
+        </member>
+        <member name="P:egg.Time.Second">
+            <summary>
+            获取秒
+            </summary>
+        </member>
+        <member name="P:egg.Time.Millisecond">
+            <summary>
+            获取毫秒
+            </summary>
+        </member>
+        <member name="M:egg.Time.op_Addition(egg.Time,egg.TimeSpan)">
+            <summary>
+            一个时间加上间隔获得另外一个时间
+            </summary>
+            <param name="t"></param>
+            <param name="ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.op_Subtraction(egg.Time,egg.TimeSpan)">
+            <summary>
+            一个时间减去间隔获得另外一个时间
+            </summary>
+            <param name="t"></param>
+            <param name="ts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Time.op_Subtraction(egg.Time,egg.Time)">
+            <summary>
+            计算两个时间差
+            </summary>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.TimeSpan">
+            <summary>
+            日期时间专用对象
+            </summary>
+        </member>
+        <member name="M:egg.TimeSpan.#ctor(egg.Time,egg.Time)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="t1"></param>
+            <param name="t2"></param>
+        </member>
+        <member name="M:egg.TimeSpan.#ctor(System.Int32)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="ms"></param>
+        </member>
+        <member name="M:egg.TimeSpan.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="days"></param>
+            <param name="hours"></param>
+            <param name="minutes"></param>
+            <param name="seconds"></param>
+            <param name="milliseconds"></param>
+        </member>
+        <member name="P:egg.TimeSpan.Now">
+            <summary>
+            申请一个新的示例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.TimeSpan.OnParseString">
+            <summary>
+            转化为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.TimeSpan.Change(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            获取调整后的时间
+            </summary>
+            <param name="days"></param>
+            <param name="hours"></param>
+            <param name="minutes"></param>
+            <param name="seconds"></param>
+            <param name="milliseconds"></param>
+        </member>
+        <member name="M:egg.TimeSpan.Change(egg.TimeSpan)">
+            <summary>
+            获取调整后的时间
+            </summary>
+            <param name="tsp"></param>
+        </member>
+        <member name="P:egg.TimeSpan.Days">
+            <summary>
+            获取日期
+            </summary>
+        </member>
+        <member name="P:egg.TimeSpan.Hours">
+            <summary>
+            获取时
+            </summary>
+        </member>
+        <member name="P:egg.TimeSpan.Minutes">
+            <summary>
+            获取分
+            </summary>
+        </member>
+        <member name="P:egg.TimeSpan.Seconds">
+            <summary>
+            获取秒
+            </summary>
+        </member>
+        <member name="P:egg.TimeSpan.Milliseconds">
+            <summary>
+            获取毫秒
+            </summary>
+        </member>
+        <member name="M:egg.TimeSpan.op_Addition(egg.TimeSpan,egg.TimeSpan)">
+            <summary>
+            两个时间间隔相加
+            </summary>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.TimeSpan.op_Subtraction(egg.TimeSpan,egg.TimeSpan)">
+            <summary>
+            两个时间间隔相减
+            </summary>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:egg.TimeVersion">
+            <summary>
+            一套根据时间线自动增长的版本号，使用此版本号可有效体现项目的消耗时间
+            格式为 年份序号.月份序号.年月标记.创建序号
+            年份序号：代表项目的年份跨度，如1.0.1908.3中的1代表项目为现年建立的，而3.4.1908.23中的3则代表从项目建立后有三个不同年份参与到项目的修订当中
+            月份序号：代表项目的本年度参与月份跨度，如1.0.1908.3中的0代表项目为本年的当月第一次修改，而3.4.1908.23中的4则代表本年的有4个月份均有参与到项目的修订当中
+            年月标记：代表项目最后一次修订的年月
+            创建序号：代表项目的总修订数
+            </summary>
+        </member>
+        <member name="P:egg.TimeVersion.Year">
+            <summary>
+            年份序号
+            </summary>
+        </member>
+        <member name="P:egg.TimeVersion.Month">
+            <summary>
+            月份序号
+            </summary>
+        </member>
+        <member name="P:egg.TimeVersion.Sign">
+            <summary>
+            年月标记
+            </summary>
+        </member>
+        <member name="P:egg.TimeVersion.Build">
+            <summary>
+            版本序号
+            </summary>
+        </member>
+        <member name="M:egg.TimeVersion.GetNextVersion">
+            <summary>
+            获取下一个版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.TimeVersion.#ctor(System.String)">
+            <summary>
+            新建一个
+            </summary>
+            <param name="ver"></param>
+        </member>
+        <member name="M:egg.TimeVersion.OnParseString">
+            <summary>
+            获取字符串表示形式
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Console">
+            <summary>
+            控制台相关函数集合
+            </summary>
+        </member>
+        <member name="M:eggs.Console.GetConsoleArgs(System.String[])">
+            <summary>
+            获取控制台参数集合
+            参数可/或-字符进行指定
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Debug">
+            <summary>
+            调试入口
+            </summary>
+        </member>
+        <member name="M:eggs.Debug.WriteLine(System.String)">
+            <summary>
+            输出一行
+            </summary>
+            <param name="cnt"></param>
+        </member>
+        <member name="M:eggs.Debug.Write(System.String)">
+            <summary>
+            输出
+            </summary>
+            <param name="cnt"></param>
+        </member>
+        <member name="M:eggs.Debug.WriteWithSign(System.String)">
+            <summary>
+            带标志输出
+            </summary>
+            <param name="cnt"></param>
+        </member>
+        <member name="M:eggs.Debug.Write(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            输出
+            </summary>
+            <param name="cnt"></param>
+            <param name="sign"></param>
+            <param name="r"></param>
+        </member>
+        <member name="T:eggs.Html">
+            <summary>
+            Html相关函数集合
+            </summary>
+        </member>
+        <member name="T:eggs.Html.ParserTypes">
+            <summary>
+            解析器类型
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.None">
+            <summary>
+            无操作
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.NodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.NodeFinish">
+            <summary>
+            节点结束
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.CData">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.PropertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.PropertyNameFinish">
+            <summary>
+            属性名称结束
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.PropertyValue">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.PropertyValueFinish">
+            <summary>
+            属性值结束
+            </summary>
+        </member>
+        <member name="F:eggs.Html.ParserTypes.Note">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="M:eggs.Html.EscapeEncode(System.String)">
+            <summary>
+            获取HTML转码后的序列化字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Html.EscapeDecode(System.String)">
+            <summary>
+            获取HTML反转码后的序列化字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Html.GetNodes(System.String,egg.Serializable.Html.HtmlElement)">
+            <summary>
+            获取节点对象
+            </summary>
+            <param name="html"></param>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Html.FillCss(egg.Serializable.Html.HtmlCss,System.String)">
+            <summary>
+            填充CSS内容
+            </summary>
+            <param name="css"></param>
+            <param name="cssText"></param>
+        </member>
+        <member name="M:eggs.Html.GetDocument(System.String)">
+            <summary>
+            获取一个文档对象
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.IO">
+            <summary>
+            输入输出相关函数
+            </summary>
+        </member>
+        <member name="M:eggs.IO.CreateFolder(System.String)">
+            <summary>
+            创建文件夹
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:eggs.IO.CheckFolderExists(System.String)">
+            <summary>
+            检车文件夹是否存在
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.CheckFileExists(System.String)">
+            <summary>
+            检车文件是否存在
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.GetDirectories(System.String)">
+            <summary>
+            获取所属子文件夹
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.GetFiles(System.String,System.String)">
+            <summary>
+            获取所属文件
+            </summary>
+            <param name="path"></param>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.GetUtf8FileContent(System.String,System.Boolean)">
+            <summary>
+            获取Utf8文件内容
+            </summary>
+            <param name="path"></param>
+            <param name="create"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.SetUtf8FileContent(System.String,System.String)">
+            <summary>
+            设置Utf8文件内容
+            </summary>
+            <param name="path"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.OpenConfigDocument(System.String)">
+            <summary>
+            打开并返回一个配置文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.OpenJsonDocument(System.String)">
+            <summary>
+            打开并返回一个Json文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.OpenXmlDocument(System.String)">
+            <summary>
+            打开并返回一个Xml文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.OpenHtmlDocument(System.String)">
+            <summary>
+            打开并返回一个Html文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.IO.OpenMarkdownDocument(System.String)">
+            <summary>
+            打开并返回一个Markdown文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Json">
+            <summary>
+            控制台相关函数集合
+            </summary>
+        </member>
+        <member name="F:eggs.Json.EnforceUnicode">
+            <summary>
+            是否强制使用Unicode进行非Ascii字符编码
+            </summary>
+        </member>
+        <member name="M:eggs.Json.Parse(System.String)">
+            <summary>
+            从字符串获取一个Json对象
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Json.GetObject``1(egg.Serializable.Json.Node)">
+            <summary>
+            将Json对象覆盖到标准对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Json.GetJsonString(System.String)">
+            <summary>
+            将字符串转化为标准的Json字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Json.SerializeObject(System.Object)">
+            <summary>
+            将对象进行Json序列化
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Json.DeserializeObject``1(System.String)">
+            <summary>
+            将Json字符串反序列化并按类型返回对象
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Markdown">
+            <summary>
+            Markdown相关函数集合
+            </summary>
+        </member>
+        <member name="M:eggs.Markdown.GetDocument(System.String)">
+            <summary>
+            获取对象
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Markdown.Escape(System.String)">
+            <summary>
+            获取HTML转码后的序列化字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Net">
+            <summary>
+            网络相关函数
+            </summary>
+        </member>
+        <member name="M:eggs.Net.GetIPv4Address(System.String)">
+            <summary>
+            将域名解析为对应的IP地址
+            </summary>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.GetHttpContent(System.String)">
+            <summary>
+            根据URL获取超文本内容
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.GetHttpContent(System.String,egg.Net.HttpModules.HttpHeaders)">
+            <summary>
+            根据URL获取超文本内容
+            </summary>
+            <param name="url"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.GetHttpContent(System.String,System.String)">
+            <summary>
+            根据URL提交数据并获取超文本内容
+            </summary>
+            <param name="url"></param>
+            <param name="postData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.GetHttpContent(System.String,System.String,egg.Net.HttpModules.HttpHeaders)">
+            <summary>
+            根据URL提交数据并获取超文本内容
+            </summary>
+            <param name="url"></param>
+            <param name="postData"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.UploadFile(System.String,System.String)">
+            <summary>
+            上传文件并获取超文本内容
+            </summary>
+            <param name="path"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.UploadFile(System.String,System.String,egg.Net.HttpModules.HttpHeaders)">
+            <summary>
+            上传文件并获取超文本内容
+            </summary>
+            <param name="path"></param>
+            <param name="url"></param>
+            <param name="headers"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Net.DownloadFile(System.String,System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="path"></param>
+            <param name="url"></param>
+        </member>
+        <member name="M:eggs.Net.DownloadFile(System.String,System.String,egg.Net.HttpModules.HttpHeaders)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="path"></param>
+            <param name="url"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:eggs.Net.DownloadFile(System.String,System.String,System.String)">
+            <summary>
+            提交数据并下载文件
+            </summary>
+            <param name="path"></param>
+            <param name="url"></param>
+            <param name="postData"></param>
+        </member>
+        <member name="M:eggs.Net.DownloadFile(System.String,System.String,System.String,egg.Net.HttpModules.HttpHeaders)">
+            <summary>
+            提交数据并下载文件
+            </summary>
+            <param name="path"></param>
+            <param name="url"></param>
+            <param name="postData"></param>
+            <param name="headers"></param>
+        </member>
+        <member name="M:eggs.Net.GetHttpJson(System.String)">
+            <summary>
+            根据URL获取Json对象
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Object">
+            <summary>
+            对象操作
+            </summary>
+        </member>
+        <member name="P:eggs.Object.Objects">
+            <summary>
+            获取基础对象管理器
+            </summary>    
+        </member>
+        <member name="P:eggs.Object.None">
+            <summary>
+            获取系统空对象
+            </summary>
+        </member>
+        <member name="M:eggs.Object.#cctor">
+            <summary>
+            初始化静态类
+            </summary>
+        </member>
+        <member name="M:eggs.Object.CreateObject``1">
+            <summary>
+            创建一个支持的对象并返回
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Object.GetObjects``1">
+            <summary>
+            获取同一种类型的对象列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Object.GetObjectById(System.Int64)">
+            <summary>
+            获取成员对象
+            </summary>
+            <param name="boid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Object.IsNull(System.Object)">
+            <summary>
+            判断对象是否为空
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Object.IsNumber(System.String)">
+            <summary>
+            判断字符串是否为数字
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Time">
+            <summary>
+            时间组件
+            </summary>
+        </member>
+        <member name="M:eggs.Time.GetNow">
+            <summary>
+            获取当前时间管理器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetNowString(System.String)">
+            <summary>
+            获取当前时间字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetNowDate">
+            <summary>
+            获取当前日期字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetNowTime">
+            <summary>
+            获取当前日期字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTime(System.DateTime)">
+            <summary>
+            获取时间管理器
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTime(System.String)">
+            <summary>
+            获取时间管理器
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTime(System.Int64,System.Boolean)">
+            <summary>
+            获取时间管理器
+            </summary>
+            <param name="tsp"></param>
+            <param name="f"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTimeSpan(egg.Time,egg.Time)">
+            <summary>
+            获取当前时间间隔(秒)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTimeSpan(System.String,System.String)">
+            <summary>
+            获取当前时间间隔(秒)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTimeSpan(egg.Time,System.String)">
+            <summary>
+            获取当前时间间隔(秒)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Time.GetTimeSpan(System.String,egg.Time)">
+            <summary>
+            获取当前时间间隔(秒)
+            </summary>
+            <param name="time1"></param>
+            <param name="time2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:eggs.Xml">
+            <summary>
+            Xml相关函数集合
+            </summary>
+        </member>
+        <member name="T:eggs.Xml.ParserTypes">
+            <summary>
+            解析器类型
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.NodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.NodeFinish">
+            <summary>
+            节点结束
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.CData">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.PropertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.PropertyNameFinish">
+            <summary>
+            属性名称结束
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.PropertyValue">
+            <summary>
+            属性值
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.PropertyValueFinish">
+            <summary>
+            属性值结束
+            </summary>
+        </member>
+        <member name="F:eggs.Xml.ParserTypes.Note">
+            <summary>
+            注释
+            </summary>
+        </member>
+        <member name="M:eggs.Xml.EscapeEncode(System.String)">
+            <summary>
+            获取HTML转码后的序列化字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Xml.EscapeDecode(System.String)">
+            <summary>
+            获取HTML反转码后的序列化字符串
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Xml.GetNodes(System.String,egg.Serializable.Xml.XmlNode)">
+            <summary>
+            获取节点对象
+            </summary>
+            <param name="xml"></param>
+            <param name="parent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:eggs.Xml.GetDocument(System.String)">
+            <summary>
+            获取一个文档对象
+            </summary>
+            <param name="xml"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

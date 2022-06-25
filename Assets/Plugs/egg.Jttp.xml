@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>egg.Jttp</name>
+    </assembly>
+    <members>
+        <member name="T:egg.Jttp.JttpClient">
+            <summary>
+            Jttp访问客户端
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpClient.Request">
+            <summary>
+            获取提交器
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpClient.Response">
+            <summary>
+            获取应答器
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpClient.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpClient.Post(System.String)">
+            <summary>
+            提交内容到指定地址并获取返回
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:egg.Jttp.JttpClient.Post(System.String,System.String)">
+            <summary>
+            提交内容到指定地址并获取返回应答器
+            </summary>
+            <param name="url"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpClient.Post(System.String,egg.Jttp.JttpRequest)">
+            <summary>
+            提交内容到指定地址并获取返回应答器
+            </summary>
+            <param name="url"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpClient.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Jttp.JttpRequest">
+            <summary>
+            Jttp提交器
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpRequest.Token">
+            <summary>
+            获取或设置交互令牌
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpRequest.Timestamp">
+            <summary>
+            获取或设置时间戳
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpRequest.Signature">
+            <summary>
+            获取或设置验证签名
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpRequest.Form">
+            <summary>
+            获取表单设置
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpRequest.Item(System.String)">
+            <summary>
+            获取或设置所属对象
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpRequest.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpRequest.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="M:egg.Jttp.JttpRequest.Create(System.String)">
+            <summary>
+            从Json字符串中创建对象
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpRequest.ToJsonString">
+            <summary>
+            获取Json字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpRequest.OnDispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:egg.Jttp.JttpResponse">
+            <summary>
+            Jttp获取器
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Result">
+            <summary>
+            获取或设置结果
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.IsSuccess">
+            <summary>
+            判断是否为成功
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.IsFail">
+            <summary>
+            判断是否为失败，失败包含错误
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.IsError">
+            <summary>
+            判断是否为错误
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.SetSuccess(System.String)">
+            <summary>
+            设置为成功
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.SetSuccess(egg.Serializable.Json.Object,System.String)">
+            <summary>
+            设置为成功
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.SetSuccess(egg.Serializable.Json.List,System.String)">
+            <summary>
+            设置为成功
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.SetFail(System.String)">
+            <summary>
+            设置为失败
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.SetError(System.Int32,System.String,System.String)">
+            <summary>
+            设置为失败
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.Success(System.String)">
+            <summary>
+            创建一个成功获取器
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.Success(egg.Serializable.Json.Object,System.String)">
+            <summary>
+            创建一个成功获取器
+            </summary>
+            <param name="data"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.Success(egg.Serializable.Json.List,System.String)">
+            <summary>
+            创建一个成功获取器
+            </summary>
+            <param name="datas"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.Fail(System.String)">
+            <summary>
+            创建一个失败获取器
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.Error(System.Int32,System.String,System.String)">
+            <summary>
+            创建一个失败获取器
+            </summary>
+            <param name="code"></param>
+            <param name="msg"></param>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Token">
+            <summary>
+            获取或设置交互令牌
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Timestamp">
+            <summary>
+            获取或设置时间戳
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Signature">
+            <summary>
+            获取或设置验证签名
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Data">
+            <summary>
+            获取数据
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Datas">
+            <summary>
+            获取数据集
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.Message">
+            <summary>
+            获取或设置消息
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.ErrorCode">
+            <summary>
+            获取或设置错误号
+            </summary>
+        </member>
+        <member name="P:egg.Jttp.JttpResponse.ErrorInfo">
+            <summary>
+            获取或设置错误信息
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.#ctor">
+            <summary>
+            对象实例化
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.#ctor(System.String)">
+            <summary>
+            对象实例化
+            </summary>
+            <param name="json"></param>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.Create(System.String)">
+            <summary>
+            从Json字符串中创建对象
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:egg.Jttp.JttpResponse.ToJsonString">
+            <summary>
+            获取Json字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:egg.Jttp.Signer">
+            <summary>
+            签名器
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.Signer.SignUp(System.String,System.String,System.Int64,System.String,System.String,System.String)">
+            <summary>
+            加签运算
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.Signer.SignUp(System.String,System.String,System.String,System.String)">
+            <summary>
+            加签运算
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.Signer.SignUpMD5(System.String,System.String,System.String)">
+            <summary>
+            MD5加签运算
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.Signer.SignUpSha1(System.String,System.String,System.String)">
+            <summary>
+            sha1加签运算
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.Signer.SignUpSha256(System.String,System.String,System.String)">
+            <summary>
+            sha256加签运算
+            </summary>
+        </member>
+        <member name="M:egg.Jttp.Signer.SignUpSha512(System.String,System.String,System.String)">
+            <summary>
+            sha512加签运算
+            </summary>
+        </member>
+    </members>
+</doc>
